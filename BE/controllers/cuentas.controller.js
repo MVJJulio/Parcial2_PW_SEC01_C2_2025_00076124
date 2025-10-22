@@ -1,15 +1,12 @@
 import { cuentas } from '../data/cuentas.js';
     
-// Función auxiliar para convertir el balance de String a Número
 const parseBalance = (balanceStr) => {
   return parseFloat(balanceStr.replace(/\$|,/g, ''));
 };
 
-// Endpoint: GET /cuentas (con búsqueda)
 export const getCuentas = (req, res) => {
   const query = req.query;
   
-  // 1. Si NO hay query params, devuelve todas las cuentas
   if (Object.keys(query).length === 0) {
     return res.status(200).json({
       count: cuentas.length,
@@ -17,7 +14,6 @@ export const getCuentas = (req, res) => {
     });
   }
 
-  // 2. Si HAY query params, buscamos
   const { _id, client, gender } = query;
   let resultados = [];
 
@@ -65,7 +61,7 @@ export const getCuentaById = (req, res) => {
   });
 };
 
-// Endpoint: GET /cuentasBalance
+// Endpoint: GET /cuentasBalance parte final
 export const getCuentasBalance = (req, res) => {
   const cuentasActivas = cuentas.filter(c => c.isActive === true);
 

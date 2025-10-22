@@ -5,7 +5,7 @@ import cuentasRoutes from './routes/cuentas.routes.js';
 // 1. Inicialización
 const app = express();
 
-// 2. Puerto (Puerto 3130 como pide el examen)
+// 2. Puerto 
 const PORT = 3130;
 
 // 3. Middlewares
