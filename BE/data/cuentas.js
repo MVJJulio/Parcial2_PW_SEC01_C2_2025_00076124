@@ -56,4 +56,4 @@ export const cuentas = [
       "gender": "female"
     }
   ];
-  
+  //datos los genere
